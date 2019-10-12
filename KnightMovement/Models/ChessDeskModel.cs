@@ -21,7 +21,6 @@ namespace KnightMovement.Models
             {
                 LettersCoordinates.Add(deskLetters[i], i + 1);
             };
-
         }
 
         public FigureModel  ChessToNumericalCoordinates(string input)

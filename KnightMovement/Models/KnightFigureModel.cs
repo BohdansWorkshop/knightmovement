@@ -49,15 +49,15 @@ namespace KnightMovement.Models
             }
 
             var friendlyFigures = figuresList.Where(x => x.Color == FigureColor.White && (x.X != knightCoordinates.X || x.Y != knightCoordinates.Y)).ToList();
-            figuresList.RemoveAll(x=>friendlyFigures.Contains(x));
+            figuresList.RemoveAll(x => friendlyFigures.Contains(x));
 
             var moves = new List<DeskSquareModel>();
 
             var result = new List<string>();
 
-            for (int i = 0; i < figuresList.Count-1; i++)
+            for (int i = 0; i < figuresList.Count - 1; i++)
             {
-                moves.AddRange(FindKnightsPath(figuresList[i], figuresList[i+1], friendlyFigures));
+                moves.AddRange(FindKnightsPath(figuresList[i], figuresList[i + 1], friendlyFigures));
                 result.AddRange(GenerateResult(FindKnightsPath(figuresList[i], figuresList[i + 1], friendlyFigures)));
             }
 
@@ -65,19 +65,18 @@ namespace KnightMovement.Models
         }
 
 
-        private List<string> GenerateResult (List<DeskSquareModel> moves)
+        private List<string> GenerateResult(List<DeskSquareModel> moves)
         {
             var result = new List<string>();
 
-
-            for(int i = 0; i < moves.Count-1; i++)
+            for (int i = 0; i < moves.Count - 1; i++)
             {
                 var currentItem = moves[i];
                 var nextItem = moves[i + 1];
                 var currentMove = FigureBehavior.NumericalToChessCoordinates(currentItem.X, currentItem.Y);
                 var nextMove = FigureBehavior.NumericalToChessCoordinates(nextItem.X, nextItem.Y);
 
-                var moveResult = (nextItem.X == moves.Last().X && nextItem.Y == moves.Last().Y)  ? "x" : "-";
+                var moveResult = (nextItem.X == moves.Last().X && nextItem.Y == moves.Last().Y) ? "x" : "-";
 
                 result.Add($"K{currentMove}{moveResult}{nextMove}");
             };
@@ -124,7 +123,6 @@ namespace KnightMovement.Models
                         movesQueue.Enqueue(moves);
                     }
                 }
-
             }
 
             //No way in here to capture all the figures, returning empty list.
