@@ -15,13 +15,13 @@ class Program
         var knightModel =kernel.Get<IKnightBehavior>();
 
 
-        Console.WriteLine("Write coordinates for knight");
+        //Console.WriteLine("Write coordinates for knight");
         var knight = Console.ReadLine();
 
-        Console.WriteLine("Write count of figures");
+        //Console.WriteLine("Write count of figures");
         var figuresCount = int.Parse(Console.ReadLine());
 
-        Console.WriteLine("Write figure settings : color position \n0 - black, 1 - white \nfor example 1 b6 - white figure on b6 square position ");
+        //Console.WriteLine("Write figure settings : color position \n0 - black, 1 - white \nfor example 1 b6 - white figure on b6 square position ");
         string[] figuresConfiguration = new string[figuresCount];
         for(int i = 0; i <figuresCount; i++)
         {
