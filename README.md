@@ -29,7 +29,7 @@ The grid is always an 8*8 matrix.
 | ------------ | ------------ |
 |  f3 |  KF3-E5 |
 | 2  |  KE5-D3 |
-| 0 c1 | DK3xC1 |
+| 0 c1 | KD3xC1 |
 |0 f2| KC1-D3|
 | | KD3xF2|
 
